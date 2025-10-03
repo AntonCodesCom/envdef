@@ -22,7 +22,7 @@ function inner(
   return value;
 }
 
-export default function parseDefItem(
+export function parseDefItem(
   item: EnvDefItem,
   source: object = process.env,
 ): string | undefined {

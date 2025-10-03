@@ -1,8 +1,8 @@
-import parseDefItem from './parseDefItem';
+import { parseDefItem } from './parseDefItem';
 import { EnvDefError, type EnvDefErrorMessage } from './errors';
 import { EnvDefItem } from './types';
 
-export default function envdef<const T extends readonly EnvDefItem<string>[]>(
+export function envdef<const T extends readonly EnvDefItem<string>[]>(
   defs: T,
   source: object = process.env,
 ): { [K in T[number]['name']]: string } {

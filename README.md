@@ -5,7 +5,7 @@ Node.js environment variable parser & validator.
 ## Usage
 
 ```typescript
-import envdef, { EnvDefItem } from "envdef";
+import { envdef, EnvDefItem } from ".";
 
 const defs: EnvDefItem[] = [
   {

@@ -1,9 +1,9 @@
 import { describe, expect, test } from 'vitest';
 import type { EnvDefItem } from './types';
-import envdef from './envdef';
+import { envdef } from './envdef';
 import { faker } from '@faker-js/faker';
 import envVarNameFactory from './test-utils/envVarNameFactory';
-import parseDefItem from './parseDefItem';
+import { parseDefItem } from './parseDefItem';
 
 // shortcut
 const oneToFive = { min: 1, max: 5 };

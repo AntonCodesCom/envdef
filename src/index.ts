@@ -1,7 +1,5 @@
-import envdef from './envdef';
-
-// default
-export default envdef;
+// envdef
+export * from './envdef'
 
 // types
 export * from './types'
