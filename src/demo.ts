@@ -1,4 +1,4 @@
-import { envdef, EnvDefItem } from ".";
+import { envdef, type EnvDefItem } from ".";
 
 const defs: EnvDefItem[] = [
   {
