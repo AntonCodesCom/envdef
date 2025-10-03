@@ -1,5 +1,6 @@
 import parseDefItem from './parseDefItem';
-import { EnvDefError, type EnvDefErrorMessage, type EnvDefItem } from './types';
+import { EnvDefError, type EnvDefErrorMessage } from './errors';
+import { EnvDefItem } from './types';
 
 export default function envdef<const T extends readonly EnvDefItem<string>[]>(
   defs: T,
