@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "outDir": "dist/cjs",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "moduleResolution": "Node",
+    "lib": ["esnext"],
+    "types": ["node"],
+  },
+  "include": ["src"]
+}
