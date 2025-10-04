@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import type { EnvDefItem } from './types';
+import type { EnvDefItem } from './envdef';
 import { envdef } from './envdef';
 import { faker } from '@faker-js/faker';
 import envVarNameFactory from './test-utils/envVarNameFactory';

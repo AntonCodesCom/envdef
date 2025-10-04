@@ -1,7 +1,37 @@
 import { parseDefItem } from './parseDefItem';
 import { EnvDefError, type EnvDefErrorMessage } from './errors';
-import { EnvDefItem, type HasDuplicates } from './types';
 
+// Recursive duplicate-checker
+type HasDuplicates<
+  T extends readonly any[],
+  Seen extends string = never,
+> = T extends readonly [infer First, ...infer Rest]
+  ? First extends { name: infer N extends string }
+    ? N extends Seen
+      ? true
+      : HasDuplicates<Rest extends readonly any[] ? Rest : [], Seen | N>
+    : false
+  : false;
+
+/**
+ * Environment variable definition schema.
+ */
+export interface EnvDefItem<Name extends string = string> {
+  name: Name;
+  optional?: boolean;
+  default?: string;
+  nonProdDefault?: string;
+  validate?: (value: string | undefined) => boolean;
+}
+
+/**
+ * Parses environment variables in accordance with definitions.
+ *
+ * @param defs env var definition array
+ * @param source `process.env` by default
+ * @returns {object} environment variable name-value map
+ * @throws {EnvDefError} on environment variable validation fail
+ */
 export function envdef<
   T extends readonly EnvDefItem<string>[],
   Names = T[number]['name'],

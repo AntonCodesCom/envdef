@@ -1,4 +1,4 @@
-import type { EnvDefItem } from './types';
+import { EnvDefItem } from './envdef';
 
 function inner(
   item: EnvDefItem,

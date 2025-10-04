@@ -1,5 +1,2 @@
 // envdef
-export * from './envdef'
-
-// types
-export * from './types'
+export * from './envdef';
