@@ -1,6 +1,6 @@
 {
   "name": "envdef",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node.js environment variable parser & validator.",
   "author": "Anton Bahurinsky",
   "license": "MIT",
