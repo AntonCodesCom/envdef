@@ -1,7 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
-import type { EnvDefItem } from './envdef';
+import type { EnvDefItem } from '../src/envdef';
 import { faker } from '@faker-js/faker';
-import { parseDefItem } from './parseDefItem';
+import { parseDefItem } from '../src/parseDefItem';
 import envVarNameFactory from './test-utils/envVarNameFactory';
 
 describe('parseDefItem', () => {

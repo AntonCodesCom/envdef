@@ -1,9 +1,9 @@
 import { describe, expect, test } from 'vitest';
-import type { EnvDefItem } from './envdef';
-import { envdef } from './envdef';
+import type { EnvDefItem } from '../src/envdef';
+import { envdef } from '../src/envdef';
 import { faker } from '@faker-js/faker';
 import envVarNameFactory from './test-utils/envVarNameFactory';
-import { parseDefItem } from './parseDefItem';
+import { parseDefItem } from '../src/parseDefItem';
 
 // shortcut
 const oneToFive = { min: 1, max: 5 };
@@ -61,7 +61,7 @@ describe('envdef', () => {
         parseDefItem(x, mockProcessEnv);
         return {
           name: x.name,
-          message: 'This should never occur.',
+          message: 'This should never be visible.',
         };
       } catch (err: any) {
         return {
