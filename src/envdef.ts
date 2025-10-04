@@ -1,11 +1,17 @@
 import { parseDefItem } from './parseDefItem';
 import { EnvDefError, type EnvDefErrorMessage } from './errors';
-import { EnvDefItem } from './types';
+import { EnvDefItem, type HasDuplicates } from './types';
 
-export function envdef<const T extends readonly EnvDefItem<string>[]>(
-  defs: T,
+export function envdef<
+  T extends readonly EnvDefItem<string>[],
+  Names = T[number]['name'],
+  D extends boolean = HasDuplicates<T>,
+>(
+  defs: D extends true
+    ? ["❌ Duplicate 'name' values are not allowed"] & T // error if duplicates
+    : T,
   source: object = process.env,
-): { [K in T[number]['name']]: string } {
+): { [K in Names & string]: string } {
   const errorMessages: EnvDefErrorMessage[] = [];
   const keyValue = defs.map((x) => {
     try {
